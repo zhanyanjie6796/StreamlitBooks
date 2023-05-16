@@ -1,6 +1,6 @@
 import streamlit as st
 # import tempfile
-from PyPDF2 import PdfReader
+# from PyPDF2 import PdfReader
 
 def style_func():
     st.write('按鈕處理')
