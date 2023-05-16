@@ -17,8 +17,8 @@ def main():
     #         f.write(stringio)
 
     # style_file_path = 'style_file/'+ style_file.name
-    # style_file_path = 'style_file/'+ "st.jpg"
-    style_file_path = "D:/zyj/OneDrive/1榮研OneDrive/職訓電腦_專題/Python_QT/StreamlitBooks/image/st_red.jpg"
+    style_file_path = 'style_file/'+ "st.jpg"
+    # style_file_path = "'D:\\zyj\\OneDrive\\1榮研OneDrive\\職訓電腦_專題\\Python_QT\\StreamlitBooks\\image\\st_red.jpg'"
     st.image(style_file_path)
 
     st.write('高解析度風格化demo')
