@@ -26,8 +26,7 @@ def main():
     if st.button('開始進行風格化處理'):
         style_func()
 
-    # for i in range(0,100,10):
-    #     st.progress(i + 1)
+
     
 if __name__ == "__main__":
     main()

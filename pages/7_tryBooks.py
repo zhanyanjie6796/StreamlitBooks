@@ -3,13 +3,14 @@ import streamlit as st
 # from PyPDF2 import PdfReader
 
 def style_func():
-    st.write('按鈕處理')
+    st.write('風格化處理')
 
 def main():
-    col1, col2 = st.columns([0.6, 0.4])  # Adjust column width
-    st.title("建置中....")    
 
-    if st.button('測試按鈕'):
+
+    st.write('高解析度風格化demo')
+
+    if st.button('開始進行風格化處理'):
         style_func()
 
 
