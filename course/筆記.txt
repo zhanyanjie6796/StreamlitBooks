@@ -1,0 +1,2 @@
+備份路徑
+D:\zyj\OneDrive\1榮研OneDrive\自然語言處理\Azure ChatGpt\langchain\StreamlitBooks
