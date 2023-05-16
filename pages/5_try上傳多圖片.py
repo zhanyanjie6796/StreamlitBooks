@@ -19,7 +19,9 @@ def main():
     # style_file_path = 'style_file/'+ style_file.name
     if style_file:
         style_file_path = style_file[0].getvalue()
-        st.image(style_file_path)       
+        st.image(style_file_path)      
+        style_file_path = style_file[1].getvalue()
+        st.image(style_file_path)            
          
 
     st.write('高解析度風格化demo')
