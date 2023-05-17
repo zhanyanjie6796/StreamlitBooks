@@ -55,6 +55,63 @@ def main():
     ]
     prompt = ChatPromptTemplate.from_messages(messages)    
 
+    # models 下面這些都可以用。
+    #彥杰修改AzureOpenAI # Initialize gpt-35-turbo and our embedding model
+    # from langchain.llms import AzureOpenAI
+    # llm = AzureOpenAI(deployment_name="text-davinci-003", model_name="text-davinci-003", temperature=0.5, max_tokens=500) # OK這個比較正常。
+
+    # models 使用 "gpt-4" 查詢等待時間會比較久。
+    from langchain.chat_models import AzureChatOpenAI 
+    llm = AzureChatOpenAI(deployment_name="gpt-35-turbo", model_name="gpt-35-turbo", temperature=0.5, max_tokens=500) 
+    # llm = AzureChatOpenAI(deployment_name="gpt-4", model_name="gpt-4", temperature=0.5, max_tokens=500) 
+    # llm = AzureChatOpenAI(deployment_name="gpt-4-32k", model_name="gpt-4-32k", temperature=0.5, max_tokens=500)
+
+
+    from langchain.chains import RetrievalQAWithSourcesChain
+    chain_type_kwargs = {"prompt": prompt}
+    chain = RetrievalQAWithSourcesChain.from_chain_type(
+        llm=llm,
+        chain_type="stuff",
+        retriever=vector_store.as_retriever(),
+        return_source_documents=True,
+        chain_type_kwargs=chain_type_kwargs
+    )
+
+
+    print("===================================================")
+    ## Use the chain to query
+    # query = "who is Simon Wardley"
+    # query = "文章標題，台灣式繁體中文回答。"
+    # query = "What is the author's name?"
+    # query = "Where is the license site for this book?"
+    # query = "簡述人工智慧的應用場景,台灣式繁體中文回答。"
+    # query = "專家系統是什麽,台灣式繁體中文回答。"
+    # query = "125頁_了凡四训讲记.pdf的摘要,台灣式繁體中文回答。"
+    # query = "列出所有PDF檔案名稱,台灣式繁體中文回答。"
+    query = "智慧,台灣式繁體中文回答。"
+    result = chain(query)
+    # print(result)
+    # print(result,file=open('demo.txt', 'w',encoding='UTF-8'))
+
+    print("===================================================")
+    # Print Answer
+    print("你的問題是："+result['question'])
+    print("答案是："+result['answer'])
+
+    # Print Sources
+    source_documents = result['source_documents']
+    for index, document in enumerate(source_documents):
+        print(f"\n\nSource {index + 1}:")
+        print("檔名："+document.metadata['source']+"    頁碼："+str(document.metadata['page']+1))    
+        print(f"  Page Content: {document.page_content}")
+
+    print("==============================================================")
+
+    # 結束測量轉換時間
+    end = time.time()
+    print("query 執行時間：%f 秒" % (end - start))     
+    print("==== end =====================================================")
+    
     st.write("哈哈哈")
    
 if __name__ == "__main__":   
