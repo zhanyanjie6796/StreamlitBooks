@@ -1,3 +1,3 @@
 # StreamlitBooks
-#### StreamlitBooks：彥杰測試用網站
->DEMO網站：<https://streaml-it-books.streamlit.app/>
+#### StreamlitBooks：測試Streamlit部署使用網站
+>網址：<https://share.streamlit.io/>
