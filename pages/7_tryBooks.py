@@ -11,7 +11,7 @@ def main():
     os.environ["OPENAI_API_VERSION"] = "2023-03-15-preview"
     os.environ["OPENAI_API_BASE"] = "https://user1-create-gpt.openai.azure.com/" # 修改成自己的 API_BASE。 
     os.environ["OPENAI_API_KEY"] = os.getenv("AZURE_OPENAI_API_KEY") # 修改成自己的 API_KEY。例如："39............................bb"
-    st.write("demo："+os.environ["OPENAI_API_KEY"]) # 設定在 streamlit 網站的 Secrets 的環境變數中。
+    # st.write("demo："+os.environ["OPENAI_API_KEY"]) # 設定在 streamlit 網站的 Secrets 的環境變數中。
 
     pdf_path =  "docs1_AI"
     # pdf_path =  "docs2_Buddhism"
@@ -78,17 +78,14 @@ def main():
     )
 
 
-    st.write("===================================================")
+    # st.write("===================================================")
     ## Use the chain to query
-    # query = "who is Simon Wardley"
     # query = "文章標題，台灣式繁體中文回答。"
     # query = "What is the author's name?"
-    # query = "Where is the license site for this book?"
-    # query = "簡述人工智慧的應用場景,台灣式繁體中文回答。"
+    query = "簡述人工智慧的應用場景,台灣式繁體中文回答。"
     # query = "專家系統是什麽,台灣式繁體中文回答。"
-    # query = "125頁_了凡四训讲记.pdf的摘要,台灣式繁體中文回答。"
-    # query = "列出所有PDF檔案名稱,台灣式繁體中文回答。"
-    query = "智慧,台灣式繁體中文回答。"
+    # query = "人工智慧是什麼.pdf的作者,台灣式繁體中文回答。"
+    # query = "智慧,台灣式繁體中文回答。"
     result = chain(query)
     # print(result)
     # print(result,file=open('demo.txt', 'w',encoding='UTF-8'))
@@ -110,9 +107,8 @@ def main():
     # 結束測量轉換時間
     end = time.time()
     st.write("query 執行時間：%f 秒" % (end - start))     
-    st.write("==== end =====================================================")
-    
-    st.write("哈哈哈")
+    st.write("==== end =====================================================")   
+   
    
 if __name__ == "__main__":   
     main()
