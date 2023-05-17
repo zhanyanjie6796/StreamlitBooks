@@ -31,9 +31,9 @@ def main():
     from langchain.vectorstores import FAISS
     if os.path.exists(data_store):
         vector_store = FAISS.load_local(
-        data_store,
-        OpenAIEmbeddings()
-        )
+            data_store,
+            OpenAIEmbeddings()
+            )
     else:
         print(f"Missing files. Upload index.faiss and index.pkl files to data_store directory first")
 
