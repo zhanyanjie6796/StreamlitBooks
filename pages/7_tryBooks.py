@@ -32,8 +32,10 @@ def main():
     if os.path.exists(data_store):
         vector_store = FAISS.load_local(data_store,OpenAIEmbeddings())
     else:
-        print(f"Missing files. Upload index.faiss and index.pkl files to data_store directory first")
-
+        # print(f"Missing files. Upload index.faiss and index.pkl files to data_store directory first")
+        st.write("Missing files. Upload index.faiss and index.pkl files to data_store directory first")
+    
+    st.write(vector_store)
    
 if __name__ == "__main__":   
     main()
