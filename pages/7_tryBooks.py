@@ -78,7 +78,7 @@ def main():
     )
 
 
-    print("===================================================")
+    st.write("===================================================")
     ## Use the chain to query
     # query = "who is Simon Wardley"
     # query = "文章標題，台灣式繁體中文回答。"
@@ -93,24 +93,24 @@ def main():
     # print(result)
     # print(result,file=open('demo.txt', 'w',encoding='UTF-8'))
 
-    print("===================================================")
+    st.write("===================================================")
     # Print Answer
-    print("你的問題是："+result['question'])
-    print("答案是："+result['answer'])
+    st.write("你的問題是："+result['question'])
+    st.write("答案是："+result['answer'])
 
     # Print Sources
     source_documents = result['source_documents']
     for index, document in enumerate(source_documents):
-        print(f"\n\nSource {index + 1}:")
-        print("檔名："+document.metadata['source']+"    頁碼："+str(document.metadata['page']+1))    
-        print(f"  Page Content: {document.page_content}")
+        st.write(f"\n\nSource {index + 1}:")
+        st.write("檔名："+document.metadata['source']+"    頁碼："+str(document.metadata['page']+1))    
+        st.write(f"  Page Content: {document.page_content}")
 
-    print("==============================================================")
+    st.write("==============================================================")
 
     # 結束測量轉換時間
     end = time.time()
-    print("query 執行時間：%f 秒" % (end - start))     
-    print("==== end =====================================================")
+    st.write("query 執行時間：%f 秒" % (end - start))     
+    st.write("==== end =====================================================")
     
     st.write("哈哈哈")
    
