@@ -35,7 +35,7 @@ def main():
         # print(f"Missing files. Upload index.faiss and index.pkl files to data_store directory first")
         st.write("Missing files. Upload index.faiss and index.pkl files to data_store directory first")
     
-    st.write(vector_store)
+    st.write("vector_store")
    
 if __name__ == "__main__":   
     main()
