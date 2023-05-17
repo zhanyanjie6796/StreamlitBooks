@@ -5,10 +5,10 @@ def main():
       
 
     import os
-    from dotenv import load_dotenv
+    # from dotenv import load_dotenv
 
     # Load environment variables (set OPENAI_API_KEY and OPENAI_API_BASE in .env)
-    load_dotenv()
+    # load_dotenv()
     os.environ["OPENAI_API_TYPE"] = "azure"
     os.environ["OPENAI_API_VERSION"] = "2023-03-15-preview"
     os.environ["OPENAI_API_BASE"] = "https://user1-create-gpt.openai.azure.com/" # 修改成自己的 API_BASE。 
