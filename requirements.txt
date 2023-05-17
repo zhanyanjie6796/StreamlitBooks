@@ -1,2 +1,2 @@
-langchain==0.0.129
-faiss==1.5.3
+langchain
+faiss
