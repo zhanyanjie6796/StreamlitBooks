@@ -82,7 +82,7 @@ def main():
     ## Use the chain to query
     # query = "文章標題，台灣式繁體中文回答。"
     # query = "What is the author's name?"
-    query = "簡述人工智慧的應用場景,台灣式繁體中文回答。"
+    query = "人工智慧的應用場景分成四大面向,台灣式繁體中文回答。"
     # query = "專家系統是什麽,台灣式繁體中文回答。"
     # query = "人工智慧是什麼.pdf的作者,台灣式繁體中文回答。"
     # query = "智慧,台灣式繁體中文回答。"
