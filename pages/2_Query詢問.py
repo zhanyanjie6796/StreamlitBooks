@@ -7,8 +7,8 @@ def style_func():
 
 def main():
     # AZURE_OPENAI_API_KEY  
-    if 'AZURE_OPENAI_API_KEY' not in st.session_state or st.session_state['AZURE_OPENAI_API_KEY'] == "":
-        st.write('請回到首頁 home 輸入您的 AZURE OPENAI_API_KEY 再回來。')
+    if 'AZURE_OPENAI_API_KEY' not in st.session_state or st.session_state['AZURE_OPENAI_API_KEY'] == "":        
+        st.markdown("###### 請回到首頁 home 輸入您的 AZURE OPENAI_API_KEY 再回來。")
         import sys # st.write('== 中斷測試 ==')
         sys.exit('== 中斷測試 ==')
     else:
