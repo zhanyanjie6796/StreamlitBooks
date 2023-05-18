@@ -21,7 +21,7 @@ def main():
         import sys
         sys.exit('== 中斷測試 ==') 
     # st.write('您的問題：', title)
-    st.write('正在為您分析中....')    
+    st.write('正在為您分析中 。。。。。。')    
 
     import os
     # from dotenv import load_dotenv
@@ -129,15 +129,15 @@ def main():
         # st.write("檔名："+document.metadata['source']+"    頁碼："+str(document.metadata['page']+1))    
         # st.write(f"  Page Content: {document.page_content}")
 
-    st.write("==============================================================")
+    # st.write("==============================================================")
 
     # 結束測量轉換時間
     end = time.time()
     st.write("query 執行時間：%f 秒" % (end - start))     
-    st.write("==== end =====================================================")   
+    # st.write("==== end =====================================================")   
    
     import sys
-    st.write('== 中斷測試 ==')
+    # st.write('== 中斷測試 ==')
     sys.exit('== 中斷測試 ==')
 
     txt = st.text_area('文獻來源：', '''
