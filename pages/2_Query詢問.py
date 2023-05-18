@@ -12,7 +12,8 @@ def main():
         import sys # st.write('== 中斷測試 ==')
         sys.exit('== 中斷測試 ==')
     else:
-        st.write('您的 AZURE OPENAI_API_KEY：', st.session_state['AZURE_OPENAI_API_KEY'])  
+        # st.write('您的 AZURE OPENAI_API_KEY：', st.session_state['AZURE_OPENAI_API_KEY'])  
+        st.markdown("#### Query 詢問")
     
     st.write('這裏的查詢資料以 docs1_AI 中的 PDF 檔案之向量索引爲例。')
     title  = st.text_input("請輸入您要詢問的問題，例如：人工智慧的應用場景分成四大面向,台灣式繁體中文回答。")
