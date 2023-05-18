@@ -1,5 +1,5 @@
 import streamlit as st
-st.markdown('# 歡迎來到')
+st.markdown('# DEMO')
 st.markdown('# Azure openAI langchain PDF')
 st.markdown('----')
 st.markdown('## 這裏可以演示 langchain PDF 的編碼和查詢')
@@ -15,5 +15,5 @@ if 'AZURE_OPENAI_API_KEY' not in st.session_state or st.session_state['AZURE_OPE
     st.session_state['AZURE_OPENAI_API_KEY'] = inputkey
 
 if st.session_state['AZURE_OPENAI_API_KEY'] != "":
-    st.write('您的 AZURE OPENAI_API_KEY：', st.session_state['AZURE_OPENAI_API_KEY']) 
+    st.write('您的輸入的 AZURE OPENAI_API_KEY：', st.session_state['AZURE_OPENAI_API_KEY']) 
     st.write('如果要重新輸入，請按 F5 重新整理網頁。')
