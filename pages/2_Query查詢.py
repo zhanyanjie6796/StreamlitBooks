@@ -127,7 +127,7 @@ def main():
         # txt = st.text_area("文獻來源：", "哈哈哈\n你好")         
         st.text_area("<b>Source"+str(index + 1)+"&nbsp;&nbsp;&nbsp;&nbsp;檔名："+
                      document.metadata['source']+"&nbsp;&nbsp;&nbsp;&nbsp;頁碼："+
-                     str(document.metadata['page']+1+"</b>"), 
+                     str(document.metadata['page']+1)+"</b>", 
                      document.page_content,height=200)
         # 下面是原本的程式
         # st.write(f"\n\nSource {index + 1}:")
