@@ -14,7 +14,7 @@ def main():
     else:
         st.write('您的 AZURE OPENAI_API_KEY：', st.session_state['AZURE_OPENAI_API_KEY'])  
     
-    st.write('test這裏的查詢資料以 docs1_AI 中的 PDF 檔案之向量索引爲例。')
+    st.write('這裏的查詢資料以 docs1_AI 中的 PDF 檔案之向量索引爲例。')
     title  = st.text_input("請輸入您要詢問的問題，例如：人工智慧的應用場景分成四大面向,台灣式繁體中文回答。")
 
     if title == "":
@@ -125,7 +125,7 @@ def main():
     source_documents = result['source_documents']
     for index, document in enumerate(source_documents):
         # txt = st.text_area("文獻來源：", "哈哈哈\n你好")         
-        st.text_area("Source"+str(index + 1)+"&nbsp;&nbsp;&nbsp;&nbsp;檔名："+
+        st.text_area("#### Source"+str(index + 1)+"&nbsp;&nbsp;&nbsp;&nbsp;檔名："+
                      document.metadata['source']+"&nbsp;&nbsp;&nbsp;&nbsp;頁碼："+
                      str(document.metadata['page']+1), 
                      document.page_content,height=200)
