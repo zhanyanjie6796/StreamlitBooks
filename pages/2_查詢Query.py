@@ -17,10 +17,6 @@ def main():
     st.write('這裏的查詢資料以 docs1_AI 中的 PDF 檔案之向量索引爲例。')
     title  = st.text_input("請輸入您要詢問的問題，例如：人工智慧的應用場景分成四大面向,台灣式繁體中文回答。")
 
-    # -------------
-    txt = st.text_area("文獻來源：", "哈哈哈\n你好")    
-    # -------------
-
     if title == "":
         import sys
         sys.exit('== 中斷測試 ==') 
@@ -126,8 +122,8 @@ def main():
     source_documents = result['source_documents']
     for index, document in enumerate(source_documents):
         # txt = st.text_area("文獻來源：", "哈哈哈\n你好") 
-        st.write(f"\n\nSource {index + 1}:")
-        txt = st.text_area("檔名："+document.metadata['source']+"    頁碼："+str(document.metadata['page']+1), document.page_content)
+        # st.write(f"\n\nSource {index + 1}:")
+        txt = st.text_area("Source "+str(index + 1)+"\t檔名："+document.metadata['source']+"\t頁碼："+str(document.metadata['page']+1), document.page_content)
         # 下面是原本的程式
         # st.write(f"\n\nSource {index + 1}:")
         # st.write("檔名："+document.metadata['source']+"    頁碼："+str(document.metadata['page']+1))    
