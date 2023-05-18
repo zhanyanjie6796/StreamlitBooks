@@ -13,6 +13,7 @@ def main():
     st.write('答案結果：', title)
 
     import sys
+    st.write('== 中斷測試 ==')
     sys.exit("== 中斷測試 ==")
 
     txt = st.text_area('文獻來源：', '''
