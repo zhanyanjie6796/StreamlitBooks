@@ -21,10 +21,7 @@ def main():
         import sys # st.write('== 中斷測試 ==')
         sys.exit('== 中斷測試 ==')
     # st.write('您的問題：', title)
-    st.markdown("###### 使用模型：gpt-35-turbo")
-    st.write('正在為您分析中 。。。。。。')    
-
-    # 函式測試???????????????????????
+    st.markdown("###### 使用模型：gpt-35-turbo 為您分析中 。。。。。。")
 
     import os
     # from dotenv import load_dotenv
@@ -116,12 +113,12 @@ def main():
     # print(result,file=open('demo.txt', 'w',encoding='UTF-8'))
 
     # st.write("===================================================")
-    st.markdown('----')
     # Print Answer
     # st.write("你的問題是："+result['question'])
     st.markdown("###### 你的問題是："+result['question'])
     st.write("答案是："+result['answer'])
-
+    st.markdown('----')
+    
     # Print Sources
     source_documents = result['source_documents']
     for index, document in enumerate(source_documents):
