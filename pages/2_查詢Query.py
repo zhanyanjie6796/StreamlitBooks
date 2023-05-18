@@ -14,8 +14,8 @@ def main():
     else:
         st.write('您的 AZURE OPENAI_API_KEY：', st.session_state['AZURE_OPENAI_API_KEY'])  
     
-    st.write('這裏的查詢資料以 docs1_AI 中的 PDF 之向量索引爲例。')
-    title  = st.text_input("請輸入您要詢問的問題：")
+    st.write('這裏的查詢資料以 docs1_AI 中的 PDF 檔案之向量索引爲例。')
+    title  = st.text_input("請輸入您要詢問的問題，例如：人工智慧的應用場景分成四大面向,台灣式繁體中文回答。")
 
     if title == "":
         import sys
@@ -31,7 +31,8 @@ def main():
     os.environ["OPENAI_API_TYPE"] = "azure"
     os.environ["OPENAI_API_VERSION"] = "2023-03-15-preview"
     os.environ["OPENAI_API_BASE"] = "https://user1-create-gpt.openai.azure.com/" # 修改成自己的 API_BASE。 
-    os.environ["OPENAI_API_KEY"] = os.getenv("AZURE_OPENAI_API_KEY") # 修改成自己的 API_KEY。例如："39............................bb"
+    os.environ["OPENAI_API_KEY"] = st.session_state['AZURE_OPENAI_API_KEY']
+    # os.environ["OPENAI_API_KEY"] = os.getenv("AZURE_OPENAI_API_KEY") # 修改成自己的 API_KEY。例如："39............................bb"
     # st.write("demo："+os.environ["OPENAI_API_KEY"]) # 設定在 streamlit 網站的 Secrets 的環境變數中。
 
     pdf_path =  "docs1_AI"
@@ -100,10 +101,11 @@ def main():
 
 
     # st.write("===================================================")
+    query = title
     ## Use the chain to query
     # query = "文章標題，台灣式繁體中文回答。"
     # query = "What is the author's name?"
-    query = "人工智慧的應用場景分成四大面向,台灣式繁體中文回答。"
+    # query = "人工智慧的應用場景分成四大面向,台灣式繁體中文回答。"
     # query = "專家系統是什麽,台灣式繁體中文回答。"
     # query = "人工智慧是什麼.pdf的作者,台灣式繁體中文回答。"
     # query = "智慧,台灣式繁體中文回答。"
