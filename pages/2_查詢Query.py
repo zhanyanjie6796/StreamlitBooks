@@ -123,7 +123,7 @@ def main():
     for index, document in enumerate(source_documents):
         # txt = st.text_area("文獻來源：", "哈哈哈\n你好") 
         # st.write(f"\n\nSource {index + 1}:")
-        txt = st.text_area("Source  "+str(index + 1)+"        檔名："+document.metadata['source']+"        頁碼："+str(document.metadata['page']+1), document.page_content)
+        txt = st.text_area("Source"+str(index + 1)+"&nbsp;&nbsp;檔名："+document.metadata['source']+"&nbsp;&nbsp;頁碼："+str(document.metadata['page']+1), document.page_content)
         # 下面是原本的程式
         # st.write(f"\n\nSource {index + 1}:")
         # st.write("檔名："+document.metadata['source']+"    頁碼："+str(document.metadata['page']+1))    
