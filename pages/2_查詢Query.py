@@ -7,9 +7,10 @@ def style_func():
 
 def main():
     #AZURE_OPENAI_API_KEY    
-    inputKey  = st.text_input("請輸入您的 AZURE OPENAI_API_KEY：")
-    st.write('您的 AZURE OPENAI_API_KEY：', inputKey)
-    st.session_state['AZURE_OPENAI_API_KEY'] = inputKey
+    if 'AZURE_OPENAI_API_KEY' not in st.session_state:
+        inputKey  = st.text_input("請輸入您的 AZURE OPENAI_API_KEY：")
+        st.session_state['AZURE_OPENAI_API_KEY'] = inputKey
+    st.write('您的 AZURE OPENAI_API_KEY：', inputKey)    
 
     st.write('對話方塊測試')
     title  = st.text_input("請輸入您要詢問的問題：")
