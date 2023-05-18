@@ -11,6 +11,10 @@ def main():
     title  = st.text_input("請輸入您要詢問的問題：")
     st.write('您的問題：', title)
     st.write('答案結果：', title)
+
+    import sys
+    sys.exit("== 中斷測試 ==")
+
     txt = st.text_area('文獻來源：', '''
     It was the best of times, it was the worst of times, it was
     the age of wisdom, it was the age of foolishness, it was
