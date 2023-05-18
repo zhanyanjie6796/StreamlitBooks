@@ -11,7 +11,7 @@ def main():
     # if 'AZURE_OPENAI_API_KEY' not in st.session_state:              
     #     st.session_state['AZURE_OPENAI_API_KEY'] = inputkey
 
-    if 'AZURE_OPENAI_API_KEY' in st.session_state:
+    if 'AZURE_OPENAI_API_KEY' in st.session_state or st.session_state['AZURE_OPENAI_API_KEY'] != "":
         st.write('您的 AZURE OPENAI_API_KEY：', st.session_state['AZURE_OPENAI_API_KEY'])    
     else:
         st.write('請回到首頁 home 輸入您的 AZURE OPENAI_API_KEY 再回來。')
