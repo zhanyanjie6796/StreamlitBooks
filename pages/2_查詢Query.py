@@ -14,7 +14,7 @@ def main():
     if 'AZURE_OPENAI_API_KEY' in st.session_state:
         st.write('您的 AZURE OPENAI_API_KEY：', st.session_state['AZURE_OPENAI_API_KEY'])    
     else:
-        st.write('請回到首頁 home 輸入您的 AZURE OPENAI_API_KEY 在回來。')
+        st.write('請回到首頁 home 輸入您的 AZURE OPENAI_API_KEY 再回來。')
         import sys
         sys.exit('== 中斷測試 ==')
 
