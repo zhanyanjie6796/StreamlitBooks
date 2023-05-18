@@ -125,7 +125,9 @@ def main():
     source_documents = result['source_documents']
     for index, document in enumerate(source_documents):
         # txt = st.text_area("文獻來源：", "哈哈哈\n你好")         
-        st.text_area("Source"+str(index + 1)+"&nbsp;&nbsp;&nbsp;&nbsp;檔名："+document.metadata['source']+"&nbsp;&nbsp;&nbsp;&nbsp;頁碼："+str(document.metadata['page']+1), 
+        st.text_area("Source"+str(index + 1)+"&nbsp;&nbsp;&nbsp;&nbsp;檔名："+
+                     document.metadata['source']+"&nbsp;&nbsp;&nbsp;&nbsp;頁碼："+
+                     str(document.metadata['page']+1), 
                      document.page_content,height=200)
         # 下面是原本的程式
         # st.write(f"\n\nSource {index + 1}:")
@@ -139,22 +141,8 @@ def main():
     st.write("query 執行時間：%f 秒" % (end - start))     
     # st.write("==== end =====================================================")   
    
-    import sys # st.write('== 中斷測試 ==')
-    sys.exit('== 中斷測試 ==')
-
-    txt = st.text_area('文獻來源：', '''
-    It was the best of times, it was the worst of times, it was
-    the age of wisdom, it was the age of foolishness, it was
-    the epoch of belief, it was the epoch of incredulity, it
-    was the season of Light, it was the season of Darkness, it
-    was the spring of hope, it was the winter of despair, (...)
-    ''')
-    st.write('Sentiment:', (txt))    
-
-
-    if st.button('開始進行風格化處理'):
-        style_func()
-
+    # import sys # st.write('== 中斷測試 ==')
+    # sys.exit('== 中斷測試 ==')
 
     
 if __name__ == "__main__":
