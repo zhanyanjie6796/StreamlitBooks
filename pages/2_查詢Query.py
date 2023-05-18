@@ -6,28 +6,14 @@ def style_func():
     st.write('風格化處理')
 
 def main():
-    # AZURE_OPENAI_API_KEY   
-
+    # AZURE_OPENAI_API_KEY  
     if 'AZURE_OPENAI_API_KEY' not in st.session_state or st.session_state['AZURE_OPENAI_API_KEY'] == "":
         st.write('請回到首頁 home 輸入您的 AZURE OPENAI_API_KEY 再回來。')
         import sys
         sys.exit('== 中斷測試 ==') 
     else:
         st.write('您的 AZURE OPENAI_API_KEY：', st.session_state['AZURE_OPENAI_API_KEY'])  
-
-    # if 'AZURE_OPENAI_API_KEY' not in st.session_state:
-    #     st.write('請回到首頁 home 輸入您的 AZURE OPENAI_API_KEY 再回來。')
-    #     import sys
-    #     sys.exit('== 中斷測試 ==')        
-
-    # if st.session_state['AZURE_OPENAI_API_KEY'] != "":
-    #     st.write('您的 AZURE OPENAI_API_KEY：', st.session_state['AZURE_OPENAI_API_KEY'])    
-    # else:
-    #     st.write('請回到首頁 home 輸入您的 AZURE OPENAI_API_KEY 再回來。')
-    #     import sys
-    #     sys.exit('== 中斷測試 ==')
-
-    st.write('對話方塊測試')
+    
     title  = st.text_input("請輸入您要詢問的問題：")
     st.write('您的問題：', title)
     st.write('答案結果：', title)
