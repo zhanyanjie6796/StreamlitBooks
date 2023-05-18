@@ -6,6 +6,10 @@ def style_func():
     st.write('風格化處理')
 
 def main():
+    #AZURE_OPENAI_API_KEY    
+    inputKey  = st.text_input("請輸入您的 AZURE OPENAI_API_KEY：")
+    st.write('您的 AZURE OPENAI_API_KEY：', inputKey)
+    st.session_state['AZURE_OPENAI_API_KEY'] = inputKey
 
     st.write('對話方塊測試')
     title  = st.text_input("請輸入您要詢問的問題：")
@@ -14,7 +18,7 @@ def main():
 
     import sys
     st.write('== 中斷測試 ==')
-    sys.exit("== 中斷測試 ==")
+    sys.exit('== 中斷測試 ==')
 
     txt = st.text_area('文獻來源：', '''
     It was the best of times, it was the worst of times, it was
