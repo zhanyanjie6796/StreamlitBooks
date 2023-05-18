@@ -5,9 +5,9 @@ st.markdown('----')
 st.markdown('## 這裏可以演示 langchain PDF 的編碼和查詢')
 
 # 測試環境使用 AZURE_OPENAI_API_KEY 設定在 Streamlit 後臺。
-import os
-if os.getenv("AZURE_OPENAI_API_KEY") is not None:
-    st.session_state['AZURE_OPENAI_API_KEY'] = os.getenv("AZURE_OPENAI_API_KEY")
+# import os
+# if os.getenv("AZURE_OPENAI_API_KEY") is not None:
+#     st.session_state['AZURE_OPENAI_API_KEY'] = os.getenv("AZURE_OPENAI_API_KEY")
 
 # 輸入 AZURE_OPENAI_API_KEY  
 if 'AZURE_OPENAI_API_KEY' not in st.session_state or st.session_state['AZURE_OPENAI_API_KEY'] == "": 
