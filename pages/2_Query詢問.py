@@ -21,6 +21,7 @@ def main():
         import sys # st.write('== 中斷測試 ==')
         sys.exit('== 中斷測試 ==')
     # st.write('您的問題：', title)
+    st.markdown("###### 使用模型：gpt-35-turbo")
     st.write('正在為您分析中 。。。。。。')    
 
     # 函式測試???????????????????????
@@ -89,8 +90,7 @@ def main():
     llm = AzureChatOpenAI(deployment_name="gpt-35-turbo", model_name="gpt-35-turbo", temperature=0.5, max_tokens=500) 
     # llm = AzureChatOpenAI(deployment_name="gpt-4", model_name="gpt-4", temperature=0.5, max_tokens=500) 
     # llm = AzureChatOpenAI(deployment_name="gpt-4-32k", model_name="gpt-4-32k", temperature=0.5, max_tokens=500)
-
-
+   
     from langchain.chains import RetrievalQAWithSourcesChain
     chain_type_kwargs = {"prompt": prompt}
     chain = RetrievalQAWithSourcesChain.from_chain_type(
@@ -118,7 +118,8 @@ def main():
     # st.write("===================================================")
     st.markdown('----')
     # Print Answer
-    st.write("你的問題是："+result['question'])
+    # st.write("你的問題是："+result['question'])
+    st.markdown("###### 你的問題是："+result['question'])
     st.write("答案是："+result['answer'])
 
     # Print Sources
