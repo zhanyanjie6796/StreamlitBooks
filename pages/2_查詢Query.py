@@ -125,9 +125,13 @@ def main():
     # Print Sources
     source_documents = result['source_documents']
     for index, document in enumerate(source_documents):
+        # txt = st.text_area("文獻來源：", "哈哈哈\n你好") 
         st.write(f"\n\nSource {index + 1}:")
-        st.write("檔名："+document.metadata['source']+"    頁碼："+str(document.metadata['page']+1))    
-        st.write(f"  Page Content: {document.page_content}")
+        txt = st.text_area("檔名："+document.metadata['source']+"    頁碼："+str(document.metadata['page']+1), document.page_content)
+        # 下面是原本的程式
+        # st.write(f"\n\nSource {index + 1}:")
+        # st.write("檔名："+document.metadata['source']+"    頁碼："+str(document.metadata['page']+1))    
+        # st.write(f"  Page Content: {document.page_content}")
 
     st.write("==============================================================")
 
