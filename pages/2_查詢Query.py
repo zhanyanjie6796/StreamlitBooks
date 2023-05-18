@@ -9,8 +9,8 @@ def main():
     # AZURE_OPENAI_API_KEY  
     if 'AZURE_OPENAI_API_KEY' not in st.session_state or st.session_state['AZURE_OPENAI_API_KEY'] == "":
         st.write('請回到首頁 home 輸入您的 AZURE OPENAI_API_KEY 再回來。')
-        import sys
-        sys.exit('== 中斷測試 ==') 
+        import sys # st.write('== 中斷測試 ==')
+        sys.exit('== 中斷測試 ==')
     else:
         st.write('您的 AZURE OPENAI_API_KEY：', st.session_state['AZURE_OPENAI_API_KEY'])  
     
@@ -18,8 +18,8 @@ def main():
     title  = st.text_input("請輸入您要詢問的問題，例如：人工智慧的應用場景分成四大面向,台灣式繁體中文回答。")
 
     if title == "":
-        import sys
-        sys.exit('== 中斷測試 ==') 
+        import sys # st.write('== 中斷測試 ==')
+        sys.exit('== 中斷測試 ==')
     # st.write('您的問題：', title)
     st.write('正在為您分析中 。。。。。。')    
 
@@ -136,8 +136,7 @@ def main():
     st.write("query 執行時間：%f 秒" % (end - start))     
     # st.write("==== end =====================================================")   
    
-    import sys
-    # st.write('== 中斷測試 ==')
+    import sys # st.write('== 中斷測試 ==')
     sys.exit('== 中斷測試 ==')
 
     txt = st.text_area('文獻來源：', '''
